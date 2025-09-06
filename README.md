@@ -1,2 +1,66 @@
-# Calculator
-Calculator
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор с памятью</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Заголовок калькулятора -->
+        <h1>Калькулятор с памятью</h1>
+        
+        <!-- Основной калькулятор -->
+        <div class="calculator">
+            <!-- Дисплей для отображения ввода и результата -->
+            <div class="display">
+                <div class="memory-indicator" id="memoryIndicator">M</div>
+                <div class="input-display" id="inputDisplay">0</div>
+                <div class="result-display" id="resultDisplay"></div>
+            </div>
+            
+            <!-- Кнопки калькулятора -->
+            <div class="buttons">
+                <!-- Первый ряд: очистка и память -->
+                <button class="btn btn-clear" onclick="clearAll()">C</button>
+                <button class="btn btn-clear" onclick="clearEntry()">CE</button>
+                <button class="btn btn-operator" onclick="deleteLast()">⌫</button>
+                <button class="btn btn-operator" onclick="addOperator('/')">/</button>
+                
+                <!-- Второй ряд: память и цифры -->
+                <button class="btn btn-memory" onclick="memoryClear()">MC</button>
+                <button class="btn btn-memory" onclick="memoryRecall()">MR</button>
+                <button class="btn btn-memory" onclick="memoryAdd()">M+</button>
+                <button class="btn btn-operator" onclick="addOperator('*')">×</button>
+                
+                <!-- Третий ряд: цифры 7-9 и вычитание -->
+                <button class="btn btn-number" onclick="addNumber('7')">7</button>
+                <button class="btn btn-number" onclick="addNumber('8')">8</button>
+                <button class="btn btn-number" onclick="addNumber('9')">9</button>
+                <button class="btn btn-operator" onclick="addOperator('-')">-</button>
+                
+                <!-- Четвертый ряд: цифры 4-6 и сложение -->
+                <button class="btn btn-number" onclick="addNumber('4')">4</button>
+                <button class="btn btn-number" onclick="addNumber('5')">5</button>
+                <button class="btn btn-number" onclick="addNumber('6')">6</button>
+                <button class="btn btn-operator" onclick="addOperator('+')">+</button>
+                
+                <!-- Пятый ряд: цифры 1-3 и корень -->
+                <button class="btn btn-number" onclick="addNumber('1')">1</button>
+                <button class="btn btn-number" onclick="addNumber('2')">2</button>
+                <button class="btn btn-number" onclick="addNumber('3')">3</button>
+                <button class="btn btn-special" onclick="calculateSquareRoot()">√</button>
+                
+                <!-- Шестой ряд: 0, точка, память и равно -->
+                <button class="btn btn-number" onclick="addNumber('0')">0</button>
+                <button class="btn btn-number" onclick="addDecimal()">.</button>
+                <button class="btn btn-memory" onclick="memorySubtract()">M-</button>
+                <button class="btn btn-equals" onclick="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
